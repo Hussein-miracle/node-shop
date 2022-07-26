@@ -11,14 +11,14 @@ const { validationResult } = require("express-validator");
 const User = require("../models/user");
 
 
-const transporter = nodemailer.createTransport(
-  sendgridTransport({
-    auth: {
-      api_key:
-        "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",
-    },
-  })
-);
+// const transporter = nodemailer.createTransport(
+//   sendgridTransport({
+//     auth: {
+//       api_key:
+//         "",
+//     },
+//   })
+// );
 
 exports.getLogin = (req, res, next) => {
   let message = req.flash("error");
@@ -122,17 +122,17 @@ exports.postLogin = (req, res, next) => {
                 console.log(err);
               }
               res.redirect("/");
-              const loginOptions = {
-                from: "miraacle64@gmail.com",
-                to: email,
+              // const loginOptions = {
+              //   from: "miraacle64@gmail.com",
+              //   to: email,
               
-                subject: `You've just logged in ${name} ✨⚡🚀.`,
-                html: `
-              <h3>You've just logged in to your shop-node-learn account</h3>
-              <p>Please if this isn't done by you,you can let us know contacting support.</p>
-              `,
-              };
-              transporter.sendMail(loginOptions);
+              //   subject: `You've just logged in ${name} ✨⚡🚀.`,
+              //   html: `
+              // <h3>You've just logged in to your shop-node-learn account</h3>
+              // <p>Please if this isn't done by you,you can let us know contacting support.</p>
+              // `,
+              // };
+              // transporter.sendMail(loginOptions);
             });
           }
 
@@ -210,7 +210,7 @@ exports.postSignup = (req, res, next) => {
       // console.log("sign up message mailOptions", mailOptions);
 
       res.redirect("/login");
-      return transporter.sendMail(mailOptions);
+      // return transporter.sendMail(mailOptions);
     })
     .catch((err) => {
       const error = new Error(err);
@@ -273,7 +273,7 @@ exports.postReset = (req, res, next) => {
         <p>Click this <a href="http://localhost:3000/reset/${token}">Link</a> to set a new password and this link expires after one hour</p>
         `,
         };
-        transporter.sendMail(resetOptions);
+        // transporter.sendMail(resetOptions);
         // console.log("reset options", resetOptions);
       })
       .catch((err) => {
