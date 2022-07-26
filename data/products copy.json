@@ -1,0 +1,49 @@
+[
+  {
+    "title": "DJI AIR 2S",
+    "imageUrl": "https://stormsend1.djicdn.com/tpc/uploads/carousel/image/a4eb1ddaf35330021088d17083746baf@ultra.jpg",
+    "description": "Equipped with a 1-inch image sensor and large 2.4μm pixels, DJI Air 2S is capable of 5.4K/30fps and 4K/60fps video. Capture any moment with the rich clarity and authentic color tones it deserves.",
+    "price": "1299",
+    "id": "0.20784657197664358"
+  },
+
+  {
+    "id": "0.838914476040501",
+    "title": "DJI MAVIC 3",
+    "imageUrl": "https://stormsend1.djicdn.com/tpc/uploads/carousel/image/6ee9b439dd97762d2efa6ed163790409@ultra.jpg",
+    "description": "Capture stunning imagery with a legendary Hasselblad camera and enjoy smooth flight with omnidirectional obstacle sensing. Every improvement on Mavic 3 sets a higher standard for aerial photography. Fly with Mavic 3 and discover imaging above everything.",
+    "price": "2049"
+  },
+
+  {
+    "title": "DJI FPV",
+    "imageUrl": "https://stormsend1.djicdn.com/tpc/uploads/carousel/image/d55541dae0fb81a6dae74c750bedeec8@small.jpg",
+    "description": "Fly through the sky in ways that seem impossible. We never lost our passion for flying, and with DJI FPV, those passions have turned imagination into reality. With this immersive and intuitive aerial platform, get ready to go into the beyond.",
+    "price": "999",
+    "id": "0.937499855607522"
+  },
+
+  {
+    "id": "0.5246403442629715",
+    "title": "DJI mini 3 pro",
+    "imageUrl": "https://stormsend1.djicdn.com/tpc/uploads/carousel/image/3a4bfa1d1318504e873fb70ff2047703@ultra.jpg",
+    "description": "The mini-sized, mega-capable DJI Mini 3 Pro is just as powerful as it is portable. Weighing less than 249 g and with upgraded safety features, it's not only regulation-friendly, it's also the safest in its series. With a 1/1.3-inch sensor and top-tier features, it redefines what it means to fly Mini.",
+    "price": "909"
+  },
+
+  {
+    "id": "0.30922523558359827",
+    "title": "Galaxy Watch4",
+    "imageUrl": "https://images.samsung.com/is/image/samsung/assets/us/mobile/galaxy-bespoke/101321/Watch4_D.jpg?$FB_TYPE_J_S_JPG$",
+    "description": "Make the most of every workout with Auto Workout Tracking. Stay motivated by connecting to live coaching sessions via your smartphone or to dynamic Group Challenges with your friends.*\r\nManage your overall sleep quality for a great night's sleep with an advanced tracker that calculates your sleep score.",
+    "price": "179.99"
+  },
+
+  {
+    "id": "0.3915848881075188",
+    "title": "Galaxy Watch-4 Classic",
+    "imageUrl": "https://images.samsung.com/is/image/samsung/assets/us/mobile/galaxy-bespoke/101321/Watch4_Classic_D.jpg?$FB_TYPE_J_S_JPG$",
+    "description": "Choose between analog or digital watch faces with a variety of backgrounds, fonts, and colors to match your tastes, the weather, or occasion. Spice up your character watch faces with AR Emojis to express your style, while animated graphics show what you're up to, like running or listening to music.",
+    "price": "249.99"
+  }
+]
