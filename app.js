@@ -12,8 +12,7 @@ const multer = require("multer");
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
-const MONGO_DB_URI =
-  "mongodb+srv://Abdullahi:Abiodun12@cluster0.d96pl5j.mongodb.net/shop?retryWrites=true&w=majority";
+const MONGO_DB_URI = "";
 
 const app = express();
 
@@ -29,8 +28,8 @@ const fileStorage = multer.diskStorage({
     cb(null, "./images");
   },
   filename: (req, file, cb) => {
-    const uniqueSuffix = Date.now() + '-' + Math.round(Math.random() * 1E9);
-    cb(null, "shop" + '-' + uniqueSuffix + '-' + file.originalname ); 
+    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
+    cb(null, "shop" + "-" + uniqueSuffix + "-" + file.originalname);
   },
 });
 
@@ -61,7 +60,7 @@ app.use(
 
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use("./images",express.static(path.join(__dirname, "images")));
+app.use("./images", express.static(path.join(__dirname, "images")));
 
 app.use(
   session({
@@ -104,8 +103,7 @@ app.use("/admin", adminRoutes);
 app.use(shopRoutes);
 app.use(authRoutes);
 
-
-app.get('/500', errorController.get500);
+app.get("/500", errorController.get500);
 
 app.use(errorController.get404);
 
