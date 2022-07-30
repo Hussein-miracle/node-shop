@@ -173,6 +173,15 @@ form {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
 }
 
+.card:hover .card__image::after {
+  opacity: 1;
+  animation: rotate 2s  linear  infinite  both;
+}
+.card:hover .card__image::before {
+  opacity: 1;
+  animation: rotate2 2s linear  infinite  both;
+}
+
 .card__header,
 .card__content {
   padding: 1rem;
@@ -186,11 +195,52 @@ form {
 }
 
 .card__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
   width: 100%;
+  background-color: #00695c;
+  position: relative;
+  overflow: hidden;
 }
 
-.card__image img {
+.card__image::after {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  content: "";
+  height: 100%;
   width: 100%;
+  opacity: 0;
+  transform-origin: center;
+  background: linear-gradient(#52e6d4,#8bfff1);
+
+}
+.card__image::before {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transform-origin: center;
+  background: linear-gradient(#8bfff1,#52e6d4);
+
+}
+
+
+
+.card__image img {
+  width: 95%;
+  height: 90%;
+  object-fit: cover;
+  z-index: 5;
 }
 
 .card__actions {
@@ -270,6 +320,65 @@ form {
   background-color: hsl(173, 100%, 21%);
   border: 1px solid #000;
 
+}
+
+@keyframes rotate {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(360deg);
+  }
+}
+@keyframes rotate2 {
+  0%{
+    transform: rotate(0deg);
+  }
+
+  100%{
+    transform: rotate(-360deg);
+  }
+}
+@media screen and (max-width : 376px) {
+    
+  .mobile-nav {
+    width: 30rem;
+    height: 100vh;
+    max-width: 90%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: white;
+    z-index: 10;
+    padding: 1rem .5rem .5rem 1rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-out;
+  }
+
+  
+  .mobile-nav__item-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .mobile-nav__item {
+    margin: 1rem;
+    padding: 0;
+  }
+
+  .mobile-nav__item a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    padding: 0.25rem 1rem;
+  }
+
+
+    
 }
 
 @media (min-width: 768px) {

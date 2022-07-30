@@ -17,5 +17,19 @@
             <div class="centered">
                 <h2>Total: <%= totalSum %></h2>
             </div>
+            <div class="centered">
+                <button id="order-btn" class="btn">Pay</button>
+                <script src="https://js.stripe.com/v3/" defer></script>
+                <script defer>
+                    const stripe = Stripe("pk_test_51LRKV4DrAtK1F99ZmX1B1GBRqZKXUZx6UdFd2fggAldi9o4XZofHsArKPHx0lWQlb4cSqfyCJpGdJiTWEvCSs7LI00Yn4Q4MJM");
+                    const orderBtn = document.querySelector("#order-btn");
+                        orderBtn.addEventListener("click", ()=> {
+                            stripe.redirectToCheckout({
+                                sessionId: "<%= sessionId %>"
+                            })
+                        });
+                        
+                </script>
+            </div>
         </main>
         <%- include('../includes/end.ejs') %>

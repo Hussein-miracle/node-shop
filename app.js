@@ -1,3 +1,4 @@
+const fs = require("fs");
 const path = require("path");
 
 const express = require("express");
@@ -6,14 +7,18 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const MongoDBStore = require("connect-mongodb-session")(session);
 const csrf = require("csurf");
+const compression = require("compression");
+const morgan = require("morgan");
 const flash = require("connect-flash");
 const multer = require("multer");
+
+const PORT = process.env.PORT || 3000;
 
 const errorController = require("./controllers/error");
 const User = require("./models/user");
 
-const MONGO_DB_URI = "";
-
+const MONGO_DB_URI =
+  `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@cluster0.d96pl5j.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
 const app = express();
 
 const store = new MongoDBStore({
@@ -51,6 +56,16 @@ app.set("views", "views");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 const authRoutes = require("./routes/auth");
+
+
+const accessLogStream = fs.createWriteStream(path.join(__dirname,"access.log") , {
+  flag:"a"
+})
+
+app.use(compression());
+app.use(morgan("combined" , {
+  stream : accessLogStream
+}));
 
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -114,8 +129,8 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MONGO_DB_URI)
   .then((result) => {
-    app.listen(3000, () => {
-      console.log("Connected on port 3000");
+    app.listen(PORT, () => {
+      console.log(`Connected on port ${PORT}`);
     });
   })
   .catch((err) => {
